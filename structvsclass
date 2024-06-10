@@ -1,0 +1,40 @@
+#include <iostream>
+using namespace std;
+
+struct Demo
+{
+    int x;
+    int y;
+    
+    void Display()
+    {
+        cout<<x<<"  "<<y<<endl;
+    }
+};
+
+class DemoC
+{
+public:
+    int x;
+    int y;
+    
+    void Display()
+    {
+        cout<<x<<"  "<<y<<endl;
+    }
+};
+
+int main()
+{
+    Demo d;
+    DemoC c;
+    d.x=10;
+    d.y=15;
+    d.Display();
+    
+    c.x=20;
+    c.y=25;
+    c.Display();
+    
+    return 0;
+}
