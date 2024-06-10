@@ -1,0 +1,84 @@
+#include <iostream>
+
+using namespace std; 
+
+class Rectangle
+{
+private:
+    int base;
+    int altura;
+ 
+public:
+    Rectangle();
+    Rectangle(int b, int a);
+    Rectangle(Rectangle &r);
+    int getBase() {return base;}
+    int getAltura() {return altura;}
+    void setBase(int b);
+    void setAltura(int a);
+    int area();
+    int perimeter();
+    bool isSquare();
+    ~Rectangle();
+
+};
+
+int main()
+{
+    Rectangle r1(10,10);
+    cout<<"The Area of Rectangle is: "<<r1.area()<<endl;
+    if(r1.isSquare())
+    {
+        cout<<"This is a SQUARE"<<endl;
+    }
+    return 0;
+}
+
+Rectangle::Rectangle()
+{
+    base = 1;
+    altura = 1;
+}
+
+Rectangle::Rectangle(int base, int altura)
+{
+    this->base = base;
+    this->altura = altura;
+}
+
+Rectangle::Rectangle(Rectangle &r)
+{
+    base = r.base;
+    altura = r.altura;
+}
+
+void Rectangle::setBase(int b)
+{
+    base = b;
+}
+
+void Rectangle::setAltura(int a)
+{
+    altura = a;
+}
+
+int Rectangle::area()
+{
+    return base*altura;
+}
+
+int Rectangle::perimeter()
+{
+    return 2*(base+altura);
+}
+
+bool Rectangle::isSquare()
+{
+    return (base==altura);
+}
+
+Rectangle::~Rectangle()
+{
+    cout<<"Rectangle detroyed";
+}
+
