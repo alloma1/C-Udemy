@@ -27,6 +27,9 @@ public:
 int main()
 {
     Cubo d;
-    d.display();  //This way works
+    Rectangle e;
+    e.display();
+    d.display();
+    d.Rectangle::display(); //in this way it can be display the Rectanglemessage  
    
 }
