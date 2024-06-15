@@ -1,0 +1,48 @@
+
+#include <iostream>
+
+using namespace std;
+
+class Rectangle
+{
+    
+public: 
+
+    void area()
+    {
+        cout<<"This is the area of Rectangle"<<endl;
+    }
+};
+class Cubo:public Rectangle
+{
+    
+public:
+    void volume()
+    {
+        cout<<"This is the volume of Cubo"<<endl;
+    }
+    
+};
+
+int main()
+{
+    Cubo d;
+    Cubo *p = &d; //This way works
+    p->area();  //This way works
+    p->volume(); //This way works
+    
+    Rectangle e;
+    //Cubo *q = &e; //Not allow to declare pointer to Cubo since e is Rectangle type
+    //area(); //does not work
+    //p->volume(); Volume is not possible because does not exist in Rectangle class
+    
+    Cubo g;
+    Rectangle *r = &g;
+    r->area();
+    //r->volume(); //class Rectangledoes not have a member of volume 
+    
+    Cubo f;
+    f.area();
+    f.volume();
+    
+}//This way works
